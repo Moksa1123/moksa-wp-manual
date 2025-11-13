@@ -1,104 +1,103 @@
-# 課程四：n8n 與 WordPress 協作 - 課程導覽
+# MoksaWP 第四階段課程：n8n與WordPress協作 (導覽頁)
+
+哈囉！歡迎來到 MoksaWP 的第四階段課程：「n8n 與 WordPress 協作」。
+
+恭喜你已完成了前面的課程，現在你已經掌握了 WordPress 的操作、設計與開發能力，能夠打造功能完善且高度客製化的網站。在這第四階段，我們將帶你進入「超自動化」的世界，學習如何利用強大的開源自動化工具 n8n，讓你的 WordPress 網站與各種服務無縫連接，實現前所未有的工作效率和使用者體驗。
+
+這門長達 30 小時的深度實戰課程，將聚焦於 n8n 如何與 WordPress 深度整合，並特別針對台灣市場最普及的通訊軟體 LINE，教你打造自動化的訊息推播、互動式客服與行銷流程。你將不再僅限於網站內部的操作，而是能將網站數據與外部服務串聯，創造出更具智慧與互動性的商業應用。
+
+準備好解放你的工作流，讓網站成為更聰明的自動化中心了嗎？讓我們開始這趟讓工作事半功倍的旅程吧！
 
 ---
 
-哈囉，歡迎來到 Moksa 的第四門核心課程：「n8n 與 WordPress 協作」。我是你的課程導師。
+## 課程目標
 
-在這門總時長 30 小時的深度課程中，我們將一起探索一個足以顛覆你對網站管理與行銷想像的強大工具 — **n8n (發音為 n-eight-n)**。
+這門課的核心目標是讓你掌握「n8n 自動化流程設計」與「WordPress 服務串接」的能力。完成本課程後，你將能夠：
 
-如果你曾經覺得 WordPress 的外掛功能雖然強大，但總有些「差一點」的地方無法滿足你獨特的業務流程；或者你每天都在重複執行一些複製、貼上、發送通知的繁瑣工作，那麼這門課就是為你量身打造的。
-
-我們會把 n8n 當作一把數位瑞士刀，將你的 WordPress/WooCommerce 網站與成千上萬的雲端服務 (如：Google Sheets, Slack, LINE, Gmail, Trello 等) 串接在一起，打造一個真正為你服務的「全自動化」商業機器。
-
----
-
-### 1. 這門課的核心目標是什麼？
-
-學完這門課程後，你將有能力：
-
-*   **獨立安裝與設定 n8n**：無論是使用雲端版或在自己的主機上自架，你都能輕鬆搞定。
-*   **精通 n8n 核心觀念**：徹底理解工作流程 (Workflow)、節點 (Node)、觸發器 (Trigger) 與憑證 (Credentials) 的運作原理。
-*   **打通任督二脈**：熟練運用 **Webhook** 與 **WordPress REST API**，讓 n8n 與 WordPress 之間可以雙向溝通，暢行無阻。
-*   **打造商業級自動化流程**：親手建立多個實用的 WooCommerce、行銷、CRM、LMS 自動化腳本，例如：
-    *   **訂單自動化**：新訂單成立後，自動將資料寫入 Google Sheets 會計表、同時在 FluentCRM 加上顧客標籤，並透過 OrderChatz API 發送一則客製化的 LINE 感謝訊息。
-    *   **棄單自動召回**：顧客放棄購物車後 1 小時，自動觸發 FluentCRM 的召回 Email，並在 24 小時後發送一則附帶 **Advanced Coupons** 優惠券連結的簡訊。
-    *   **課程學習自動化**：當學員在 LearnDash 完成一門課程，自動在 BuddyBoss 社團發布一則恭賀訊息，並給予 **YITH Points** 點數獎勵。
-    *   **內容行銷自動化**：當 WordPress 發布一篇新文章，自動將文章連結與摘要推播到你的 Slack、Discord 或 Telegram 頻道。
-*   **學會偵錯與維護**：當自動化流程出錯時，你將知道如何閱讀錯誤訊息、逐步排查問題，並確保流程穩定運行。
+*   **獨立部署與管理 n8n：** 理解 n8n 的運作原理，並能在自己的環境中建置與維護 n8n 服務。
+*   **精通 n8n 與 WordPress 整合：** 
+    *   熟練使用 n8n 的 **WordPress / WooCommerce 專用節點**。
+    *   運用 **HTTP Request 節點直接與 WordPress REST API v2 互動**，實現更彈性與深度的資料讀寫。
+    *   利用 WordPress Webhooks，讓網站事件精準觸發 n8n 工作流。
+*   **深入應用 LINE Messaging API：** 掌握 LINE Developers 平台設定，並透過 **強化版的 n8n LINE Messaging 節點 (參考：`elct9620/n8n-nodes-line-messaging`)**，發送多種 LINE 訊息，**精通 Flex Message 設計**，並打造豐富的互動體驗。
+*   **設計商業級自動化情境：** 結合 WordPress 內容、WooCommerce 訂單、表單提交與 LINE，實作新文章通知、訂單提醒、**Google Sheets 同步**、顧客關懷等多元應用。
+*   **掌握 n8n 進階技巧：** 學會使用**模組化工作流**與 **Code 節點**處理複雜邏輯，並建立穩健的錯誤處理機制。
 
 ---
 
-### 2. 課程架構與單元規劃
+## 課程單元總覽
 
-這 30 小時的課程，我們將會依序解鎖以下模組：
+這 30 小時的課程將分為以下幾個主要單元：
 
-*   **模組一：n8n 基礎入門**
-    *   什麼是 n8n？為什麼它比 Zapier 或 Make 更適合我們？
-    *   n8n 的安裝與環境設定 (Docker 與 n8n Cloud)
-    *   導覽 n8n 操作介面：工作流程、節點、連線、資料結構
-    *   你的第一個 n8n 工作流程：Hello World
+### 01. n8n 基礎與核心操作
 
-*   **模組二：WordPress 與 n8n 的溝通橋樑**
-    *   **觀念**：什麼是 Webhook？什麼是 REST API？
-    *   **實作**：在 WordPress 中設定 Webhook (例如：WooCommerce 新訂單觸發)
-    *   **實作**：啟用 WordPress REST API 與「應用程式密碼」，讓 n8n 可以安全地讀寫你的網站資料。
-    *   **Moksa 技巧**：如何使用 **Query Monitor** 來觀察網站正在進行的 API 請求。
+本單元將介紹 n8n 的基本概念、運作模式，以及如何建置您的 n8n 工作環境，並熟悉核心節點的操作。
 
-*   **模組三：WooCommerce 自動化實戰**
-    *   串接綠界 ECPay 金流，處理「付款完成」的訂單狀態更新。
-    *   整合 RY Tools，當訂單狀態變為「已出貨」時，自動發送帶有物流追蹤碼的通知。
-    *   同步庫存：當 WooCommerce 商品庫存低於 10 件時，自動發送 Slack 通知給倉管人員。
-    *   發票自動化：觸發綠界 ECPay 發票開立，並將發票資訊回寫到訂單備註。
+*   01.01 課程介紹：n8n 與 WordPress 自動化協作的價值
+*   01.02 n8n 核心概念與應用場景 (workflow, node, trigger, action)
+*   01.03 n8n 環境建置 (Cloud / Local Docker)
+*   01.04 (實務) n8n 核心節點操作 (Set, Merge, IF, Code) 與資料結構處理
 
-*   **模組四：行銷與 CRM 自動化**
-    *   **FluentCRM 深度整合**：新增聯絡人、添加/移除標籤、觸發自動化流程。
-    *   **LINE 行銷自動化**：串接 **OrderChatz** 或 **Order Notify** 的 API，做到分眾、客製化的 LINE 訊息推播。
-    *   **會員與點數系統**：整合 **YITH Membership** 與 **YITH Points and Rewards**，當用戶達成特定條件 (如消費滿額)，自動升級會員或贈送點數。
+### 02. n8n 與 WordPress 核心整合
 
-*   **模組五：LMS 與社群自動化**
-    *   串接 **LearnDash** 或 **LifterLMS**，根據學員的學習進度觸發不同流程。
-    *   整合 **BuddyBoss**，自動發布活動、同步用戶資料、建立專屬社團。
+本單元將深入探討 n8n 如何透過 WordPress REST API 進行資料互動，並利用 Webhooks 實現 WordPress 事件的自動化觸發。我們將涵蓋使用 n8n 專用節點以及直接透過 HTTP Request 節點與 REST API v2 溝通的技巧。
 
-*   **模組六：進階技巧與實務案例**
-    *   錯誤處理 (Error Handling)：建立更穩固、不怕出錯的工作流程。
-    *   資料轉換與函式 (Data Transformation & Functions)：處理複雜的資料格式 (JSON)。
-    *   排程與定時任務 (Scheduling)：讓你的自動化流程在每天指定時間運行。
-    *   **Moksa 畢業專案**：從零到一，為一個模擬的電商網站，設計並實作出完整的自動化營運流程。
+*   02.01 WordPress REST API 深度解析 (含 v2 API 與驗證機制：應用程式密碼)
+*   02.02 (實作) 使用 n8n 專用節點讀寫 WordPress/WooCommerce 資料
+*   02.03 (實作) 使用 HTTP Request 節點讀取 WP 資料 (GET, 複雜查詢)
+*   02.04 (實作) 使用 HTTP Request 節點寫入 WP 資料 (POST/PUT, 更新文章/ACF)
+*   02.05 (實務) WordPress Webhooks 介紹：如何讓 WP 事件觸發 n8n 工作流
+
+### 03. LINE Messaging API 深度應用
+
+本單元將專注於台灣最受歡迎的通訊軟體 LINE。您將學習如何設定 LINE Developers 帳號，並透過 `n8n-nodes-line-messaging` 強化版的 LINE Messaging 節點，發送多種訊息類型，甚至建立互動式圖文選單。
+
+*   03.01 LINE Developers 帳號設定與 Messaging API 啟用
+*   03.02 (實作) 運用 `n8n-nodes-line-messaging` 節點：發送文字、圖片、貼圖訊息
+*   03.03 (實作) LINE Flex Message 深度實戰 (含 LINE Flex Message Simulator)
+*   03.04 (實作) LINE 其他訊息類型 (Quick Reply, Imagemap, Template Messages)
+*   03.05 (實作) 建立 LINE Rich Menu (圖文選單) 並透過 n8n 管理
+*   03.06 (實務) LINE Webhooks：接收使用者訊息與事件 (打造互動式 LINE Bot)
+
+### 04. n8n 與 LINE & WordPress 商業情境整合
+
+將前面學到的知識融會貫通，在本單元中，您將實作多個基於真實商業情境的自動化工作流，提升網站的互動性與營運效率。
+
+*   04.01 (實作) WordPress 新文章發布，自動推播 LINE Flex Message
+*   04.02 (實作) WooCommerce 新訂單通知 LINE 客服並同步記錄到 Google Sheets
+*   04.03 (實作) 處理 WordPress 表單 (如 WPForms) 提交，自動回覆 LINE 訊息
+*   04.04 (實作) 結合 FluentCRM：特定顧客行為 (例如：購買高單價商品) 後 LINE 自動化關懷
+*   04.05 (實作) 打造 LINE 互動式客服：使用者輸入關鍵字查詢 WordPress 文章或 WooCommerce 訂單狀態
+
+### 05. 進階應用與部署策略
+
+本單元將探討 n8n 工作流的穩定性、模組化、錯誤處理與部署策略，確保您的自動化系統能夠穩健且高效地運行。
+
+*   05.01 n8n 進階技巧：模組化工作流 (Execute Workflow)
+*   05.02 n8n 進階技巧：Code 節點的 JavaScript 應用 (資料處理與邏輯判斷)
+*   05.03 n8n 錯誤處理 (Error Workflow) 與日誌監控
+*   05.04 n8n 部署與維護策略 (Docker Compose, PM2, 版本更新)
 
 ---
 
-### 3. 上課前需要準備什麼？
+## 學習前的準備
 
-為了讓學習過程更順利，請確認你具備以下條件：
+這是一門進階課程，我們假設你已經具備以下基礎：
 
-*   **先備知識**：
-    *   已完成 Moksa 的 WordPress 與 WooCommerce 基礎課程，對後台操作非常熟悉。
-    *   了解什麼是「API」，不需要會寫程式，但至少知道它是軟體之間溝通的橋樑。
-    *   一顆樂於解決問題、享受邏輯思考的大腦！
+*   熟悉 WordPress 後台操作 (已完成 MoksaWP 課程一)。
+*   對 WordPress REST API 有基本認識 (已完成 MoksaWP 課程三)。
+*   具備基本的程式邏輯概念，了解 API 串接運作方式。
+*   擁有 LINE Developers 帳號 (課程中會引導建立)。
 
-*   **軟硬體環境**：
-    *   一個可以自由操作的 WordPress 網站 (**強烈建議**使用 **LocalWP** 在本機電腦上建立一個測試站)。
-    *   網站的**管理員 (Administrator)** 權限。
-    *   一個用來運行 n8n 的環境 (課程初期我們會從 **n8n.cloud** 的免費方案開始，後續會教學如何使用 Docker 自行架設)。
-    *   一個好用的程式碼編輯器，如 **VS Code** (方便我們查看和整理 API 回傳的資料)。
+準備好了嗎？這將是你釋放 WordPress 潛力、打造智慧自動化網站的關鍵一步！
+
+讓我們開始這趟讓工作事半功倍的旅程吧！
 
 ---
 
-### 4. 想像一下，自動化的力量...
+## 附錄
 
-在你開始這趟旅程之前，先想像一個場景：
-
-> 一位新顧客在你的網站下單，購買了一件衣服。
->
-> 在你介入**任何**手動操作之前，系統在 5 秒內自動完成了以下所有事情：
->
-> 1.  WooCommerce 確認收款成功，訂單狀態轉為「處理中」。
-> 2.  n8n 流程被**瞬間觸發**。
-> 3.  **會計**：訂單的品項、金額、顧客資料被自動寫入一張 Google Sheets 會計總表。
-> 4.  **CRM**：系統檢查到這是新顧客，自動在 FluentCRM 中為他貼上「首次購物」和「服飾類」的標籤。
-> 5.  **客服**：一則帶有顧客姓名與訂單編號的 LINE 訊息，透過 OrderChatz 發送到顧客手機上：「`王小明 您好，感謝您在 Moksa 的首次訂購！您的訂單 #12345 已確認，我們會儘快為您出貨喔！`」。
-> 6.  **團隊溝通**：在公司內部的 Slack `#orders` 頻道，跳出一則通知：「`新訂單！#12345，顧客 王小明，金額 $1,280`」。
-
-這就是 n8n 結合 WordPress 能達到的境界。它不是魔法，而是一套你可以完全掌握的技術。
-
-準備好了嗎？讓我們一起開始這趟令人興奮的自動化旅程吧！
+*   **附錄 A：n8n 常用節點參考**
+*   **附錄 B：LINE Messaging API 與 `n8n-nodes-line-messaging` 參考**
+    *   LINE Messaging API 官方文件
+    *   `n8n-nodes-line-messaging` GitHub 專案：`https://github.com/elct9620/n8n-nodes-line-messaging`
